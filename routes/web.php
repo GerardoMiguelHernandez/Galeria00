@@ -12,19 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('galeria.template');
 });
-Route::get('home','UsersController@index');
+Route::get('admin/users/index','UsersController@index');
 
 Route::group(['prefix' => 'admin'],function(){
 
 
 
 Route::get('login','Auth\LoginController@get_login');
+Route::post('login','Auth\LoginController@autenticate');
 Route::get('register','Auth\RegisterController@get_register');
 Route::post('post_register','Auth\RegisterController@store');
 
-Route::resource('user','UsersController');
+
 });
 
 
