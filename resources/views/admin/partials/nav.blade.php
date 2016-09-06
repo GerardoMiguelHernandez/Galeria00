@@ -23,7 +23,7 @@
       <ul class="right hide-on-med-and-down"> 
         <li><a href="{{ url('admin/users/index') }}"><i class="material-icons left">search</i>Usuarios</a></li>
         <li><a href="badges.html"><i class="material-icons left">add</i>Eventos</a></li>
-        <li><a href="collapsible.html"><i class="material-icons left">refresh</i>Categorias</a></li>
+        <li><a href="{{ url('admin/categoria/index') }}"><i class="material-icons left">refresh</i>Categorias</a></li>
         <li><a href="mobile.html"><i class="material-icons left">account_circle</i>Cerrar Session</a></li>
       </ul>
 

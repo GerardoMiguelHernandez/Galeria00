@@ -5,7 +5,7 @@
 @section('content')
     
 
-
+<br>
     <div class="container">
 
 <div class="card bordered z-depth-3" style="margin:0% auto; max-width:400px;">
@@ -25,11 +25,11 @@
 					<div class="row">
 						<div class="input-field	col s12">
 							<label for="name">Nombre</label>
-							<input type="text" name="nombre" id="nombre" value="">
+							<input type="text" name="name" id="name" value="">
 						</div>	
 						<div class="input-field col s12">
-							<label for="descripcion">Descripcion</label>
-							<input type="text" name="descripcion" id="descripcion" value="">
+							<label for="description">Descripcion</label>
+							<input type="text" name="description" id="description" value="">
 						</div>
 												
 					</div>
