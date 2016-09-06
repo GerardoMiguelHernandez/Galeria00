@@ -17,10 +17,10 @@
 
 	
 
-	<div class="container">
+	<div>
 		@yield('content')
 	</div>
-	@include( 'admin.partials.floating_button')
+	
 	@include('admin.partials.footer')
 	
 

@@ -19,14 +19,21 @@ Route::get('admin/users/index','UsersController@index');
 Route::group(['prefix' => 'admin'],function(){
 
 
-
+Route::post('logout','Auth\LoginController@log0ut');
 Route::get('login','Auth\LoginController@get_login');
 Route::post('login','Auth\LoginController@autenticate');
 Route::get('register','Auth\RegisterController@get_register');
 Route::post('post_register','Auth\RegisterController@store');
 
 
+
+Route::get('users/{id}/destroy',[
+	'uses' => 'UsersController@destroy',
+	'as' => 'admin.users.destroy']);
 });
+
+
+
 
 
 

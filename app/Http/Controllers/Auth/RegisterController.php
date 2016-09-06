@@ -90,9 +90,9 @@ class RegisterController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-         $message = $user ? 'Usuario agregado correctamente!' : 'El usuario NO pudo agregarse!';
-        
-        return redirect()->route('admin.user.index')->with('message', $message);
+        return redirect()->action('UsersController@index');
+
+
     }
     public function index(){
 
