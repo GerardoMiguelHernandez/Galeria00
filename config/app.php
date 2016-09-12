@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'My Application',
+    'name' => 'Galeria',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,6 +172,8 @@ return [
         /*
          * Application Service Providers...
          */
+        Intervention\Image\ImageServiceProvider::class,
+     Collective\Html\HtmlServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -224,7 +226,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+       'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+      'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

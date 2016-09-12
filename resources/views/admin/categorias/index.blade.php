@@ -1,4 +1,4 @@
-@extends('admin.template_admin')
+@extends('admin1.template_admin')
 
 @section('title', 'Listado de Categorias')
 
@@ -6,7 +6,7 @@
 
 
 
-<table class="bordered striped">
+<table class="bordered responsive-table highlight">
         <thead>
           <tr>
               <th data-field="id">id</th>
@@ -26,7 +26,7 @@
             <td>{{$category->description}}</td>
             
             <td><a href="{{route('admin.categoria.destroy',$category->id)}}" class="waves-effect waves-light btn red darken-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar"><i class="material-icons">delete_sweep</i></a></td>
-            <td><a class="waves-effect waves-light btn teal lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons left">mode_edit</i></a></td>
+            <td><a href="{{route('categorias.edit',$category->id)}}"class="waves-effect waves-light btn teal lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons left">mode_edit</i></a></td>
              
           </tr>
           @endforeach

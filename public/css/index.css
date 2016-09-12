@@ -49,6 +49,9 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+.material-icons.orange600 { color: #FB8C00; }
+.material-icons.teal600 { color: #1b5e20; }
 .iconfont{
 
  font-size: 5em; 

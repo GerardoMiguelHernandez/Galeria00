@@ -1,4 +1,4 @@
-@extends('admin.template_admin')
+@extends('admin1.template_admin')
 
 @section('title', 'Listado de Usuarios')
 

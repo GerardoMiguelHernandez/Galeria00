@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -50,7 +50,7 @@ class LoginController extends Controller
 
 
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-    return redirect()->intended('dashboard');
+        return redirect()->intended('dashboard');
 }
     }
 
@@ -59,6 +59,6 @@ class LoginController extends Controller
     public function log0ut()
     {
        Auth::logout();
-       return Redirect::to('');
+       return Redirect::to('auth.login');
     }
 }

@@ -90,7 +90,7 @@
                                 
 
                                 <div class="input-field col s12">
-    <select id="password" class="form-control" name="tipo" required>
+    <select id="tipo" class="form-control" name="tipo" required>
       <option value="" disabled selected>Choose your option</option>
       <option value="Administrador">Administrador</option>
       <option value="Normal">Normal</option>
