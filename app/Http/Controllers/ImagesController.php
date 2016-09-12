@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB; 
+use Intervention\Image\ImageManagerStatic as Image1;
 
 use App\User;
 use App\Image;
@@ -24,6 +25,9 @@ class ImagesController extends Controller
     public function index()
     {
         //
+
+         $images =Image::orderBy('id','ASC')->paginate(5);
+        return view('admin.imagenes.index')->with('images',$images);
     }
 
     /**
@@ -56,8 +60,18 @@ class ImagesController extends Controller
     public function store(Request $request)
     {
         //
-
-        dd($request->all());
+       $file =$request->file('image');
+   $path = public_path().'/thumbnails/';
+   //$image->save($path.$file->getClientOriginalName());
+   $image = Image1::make($file);
+   $image->save($path.'thumb_'.$file->getClientOriginalName());
+   $image= new Image();
+   $image->image= $file->getClientOriginalName();
+   $image->descripcion = $request->descripcion;
+   $image->usuario_id = $request->usuario_id;
+   $image->evento_id= $request->evento_id;
+   $image->save();
+   return redirect()->action('ImagesController@index');
     }
 
     /**

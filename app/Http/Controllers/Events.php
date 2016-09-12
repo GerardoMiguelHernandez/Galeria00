@@ -58,7 +58,8 @@ class Events extends Controller
    $file =$request->file('image');
    $path = public_path().'/thumbnails/';
    //$image->save($path.$file->getClientOriginalName());
-   $image = Image::make($file)->resize(240,200);
+   //$image = Image::make($file)->resize(240,200);
+    $image = Image::make($file);
    $image->save($path.'thumb_'.$file->getClientOriginalName());
    $event= new Event();
    $event->nombre = $request->nombre;

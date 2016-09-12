@@ -18,7 +18,11 @@
         
 
 
-      </a><!--
+      </a>
+<ul class="right hide-on-med-and-down teal"> 
+<li><a href="{{ url('login') }}"><i class="material-icons left">account_circle</i>Login</a></li>
+</ul>            
+      <!--
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons teal">menu</i></a>
       <ul class="right hide-on-med-and-down teal"> 
         <li><a href="{{ url('admin/users/index') }}"><i class="material-icons left">search</i>Usuarios</a></li>

@@ -15,7 +15,7 @@
 	<div class="row">
 		<div class="col s12 m12 l12">
 			
-				 {!! Form::open(['route' => 'imagenes.store', 'method' => 'POST', 'files' => 'true','id' => 'Drop' , 'class' => 'dropzone']) !!}
+				 {!! Form::open(['route' => 'imagenes.store', 'method' => 'POST', 'files' => 'true','class'=>'col s12']) !!}
 
 					<div class="row">
 						<div class="col s12 cyan">
@@ -35,7 +35,12 @@
 						{!! form::label('descripcion','Descripcion')!!}
                             {!! form::text('descripcion',null,['class' => 'form-control']) !!}
 							</div>	
-			
+
+							<div class="input-field	col s12">
+						{!! form::label('Usuario',Auth::user()->name)!!}
+                            {!! form::text('usuario_id',Auth::user()->id,['class' => 'form-control']) !!}
+							</div>	
+		
 											
 					</div>
 					
@@ -68,42 +73,6 @@
 	</div>
 	</div>
 </div>
-
-<script>
-        Dropzone.options.Drop = {
-        	url: "/admin/imagenes",
-            autoProcessQueue: false,
-            uploadMultiple: true,
-            maxFilezise: 10,
-            maxFiles: 2,
-            
-            init: function() {
-                var submitBtn = document.querySelector("#submit");
-                myDropzone = this;
-                
-                submitBtn.addEventListener("click", function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    myDropzone.processQueue();
-                });
-                this.on("addedfile", function(file) {
-                    alert("file uploaded");
-                });
-                
-                this.on("complete", function(file) {
-                    myDropzone.removeFile(file);
-                });
- 
-                this.on("success", 
-                    myDropzone.processQueue.bind(myDropzone)
-                );
-            }
-        };
-    </script>
-
-
-
-
 
 
 @endsection

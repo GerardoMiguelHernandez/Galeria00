@@ -73,7 +73,15 @@
                             <li class="NavLateralDivider"></li>
                             <li><a href="{{route('centros.create')}}" class="waves-effect waves-light">Crear</a></li>
                         </ul>
-                    </li>   
+                    </li> 
+                    <li>
+                        <a href="#" class="NavLateral-DropDown  waves-effect waves-light"><i class="zmdi zmdi-picture-in-picture zmdi-hc-3x"></i> <i class="zmdi zmdi-chevron-down NavLateral-CaretDown"></i> Imagenes</a>
+                        <ul class="full-width">
+                            <li><a href="{{route('imagenes.index')}}" class="waves-effect waves-light">Listar</a></li>
+                            <li class="NavLateralDivider"></li>
+                            <li><a href="{{route('imagenes.create')}}" class="waves-effect waves-light">Crear</a></li>
+                        </ul>
+                    </li>  
                 </ul>
             </div>  
         </div>  
