@@ -104,12 +104,13 @@
 
 
                 </li>
-                <li><a href="#" class="tooltipped waves-effect waves-light btn-Search" data-position="bottom" data-delay="50" data-tooltip="Search"><i class="zmdi zmdi-search"></i></a></li>
+                <li>
+               <!-- <a href="#" class="tooltipped waves-effect waves-light btn-Search" data-position="bottom" data-delay="50" data-tooltip="Search"><i class="zmdi zmdi-search"></i></a></li>
                 <li>
                     <a href="#" class="tooltipped waves-effect waves-light btn-Notification" data-position="bottom" data-delay="50" data-tooltip="Notifications">
                         <i class="zmdi zmdi-notifications"></i>
                         <span class="ContentPage-Nav-indicator bg-danger">2</span>
-                    </a>
+                    </a>-->
                 </li>
             </ul>   
         </div>

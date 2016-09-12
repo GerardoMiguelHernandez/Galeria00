@@ -70,7 +70,7 @@ class Events extends Controller
    $event->category_id= $request->category_id;
    $event->centro_id= $request->centro_id;
    $event->save();
-
+return redirect()->action('Events@index');
   
 
     }
