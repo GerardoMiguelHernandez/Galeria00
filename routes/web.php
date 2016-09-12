@@ -10,15 +10,19 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+use Illuminate\Support\Facades\DB; 
 Route::get('/admin/home', function () {
     return view('admin1.partials.slider');
 });
 
 
 Route::get('/', function () {
-    return view('admin.template_admin');
+
+	 
+	 $events =DB::table('events')->get();
+            return view('galeria.slider',compact('events',$events));
 });
+
 
 
 

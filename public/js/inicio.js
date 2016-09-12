@@ -10,6 +10,7 @@ $("drop").dropzone({
 $('.carousel').carousel();
 $('.slider').slider({full_width: true});
 
+
    $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
