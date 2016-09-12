@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="col s12 m12 l12">
 			
-				<form method="post" action="{{ url('admin/centros/store') }}" class="col s12">
+				<form method="post" action="{{ route('centros.store') }}" class="col s12">
 
 					<div class="row">
 						<div class="col s12 cyan">
@@ -34,7 +34,7 @@
 						
 							<div class="input-field col s12">
     <select id="region" name="region" required>
-      <option value="" disabled selected>Elige una region</option>
+      <option value="">Elige una region</option>
       <option value="Valles Centrales">Valles Centrales</option>
       <option value="Mixteca">Mixteca</option>
       <option value="Istmo">Istmo</option>

@@ -58,6 +58,10 @@ Route::get('eventos/{id}/destroy',[
 	'uses' => 'Events@destroy',
 	'as' => 'admin.eventos.destroy']);
 
+Route::get('centros/{id}/destroy',[
+	'uses' => 'Works_centers@destroy',
+	'as' => 'admin.centros.destroy']);
+
 Route::get('users/{id}/destroy',[
 	'uses' => 'UsersController@destroy',
 	'as' => 'admin.users.destroy']);

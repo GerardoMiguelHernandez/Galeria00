@@ -99,7 +99,8 @@ class Works_centers extends Controller
        $centro->region= $request->region;
        $centro->save();
 
-        return redirect()->action('Works_centers@index');
+        return redirect()->action('Works_centers@index'); 
+        //dd($request->all());
 
     }
 
@@ -114,7 +115,7 @@ class Works_centers extends Controller
         //
 
          $centro = Work_center::find($id);
-        $centro->delete();
+         $centro->delete();
          return redirect()->action('Works_centers@index');
     }
 }
