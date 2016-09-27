@@ -11,17 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
   </head>
   <body>
 
     <!-- Page Wrapper -->
-      <div id="page-wrapper" style="background:#1a237e;">
+      <div id="page-wrapper" style="background:#ff8a65;">
 
         <!-- Header -->
           <header id="header" class="alt">
             <h1><a href="index.html">Galeria CFE</a></h1>
+            
             <nav>
               <a href="#menu">Menu</a>
             </nav>
@@ -32,9 +38,16 @@
             <div class="inner">
               <h2>Menu</h2>
               <ul class="links">
+              <li><form method="GET" action="{{url('Bienvenido')}}">
+            <div class="field">
+                  <label for="name">Buscar</label>
+                  <input type="text" name="nombre" id="nombre" />
+                </div>
+            </form></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="generic.html">Generic</a></li>
                 <li><a href="elements.html">Elements</a></li>
+
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Sign Up</a></li>
               </ul>
@@ -45,7 +58,7 @@
         <!-- Banner -->
           <section id="banner">
             <div class="inner">
-              <div class="logo"><a href="{{url('Bienvenido')}}"><span class="icon fa-home">
+              <div class="logo"><a href="{{url('Bienvenido')}}" data-toggle="tooltip" title="Home"><span class="icon fa-home">
               </span></a></div>
               <h2>Galeria de Evidencias</h2>
               <p>Coleccion de Imagenes <a href="http://html5up.net">CFE</a></p>
@@ -56,54 +69,40 @@
           <section id="wrapper">
 
             <!-- One -->
-            @foreach($even as $ev)_
+            @foreach($events as $event)_
               <section id="one" class="wrapper spotlight style1">
                 <div class="inner">
-                  <a href="#" class="image"><img src="{{$ev->imagen}}" alt="" /></a>
+                  <a href="#" class="image"><img src="{{$event->imagen}}" alt="" /></a>
                   <div class="content">
-                    <h2 class="major">{{$ev->nombre}}</h2>
+                    <h2 class="major">{{$event->nombre}}</h2>
                     <p>
-                      {{$ev->descripcion}}
+                      {{$event->descripcion}}
                     </p>
-                    <a href="{{route('eventos.show',$ev->id)}}" class="special">Ver mas</a>
+                    <a href="{{route('eventos.show',$event->id)}}" class="special">Ver mas</a>
                   </div>
                 </div>
               </section>
 @endforeach
+ {!! $events->render() !!}
             <!-- Four -->
               <section id="four" class="wrapper alt style1">
                 <div class="inner">
-                  <h2 class="major">Vitae phasellus</h2>
-                  <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+                  <h2 class="major"><span>Albums</span></h2>
+                  <p>Disfrutaras revisando cada fotografia de los diversos Albums...Recordar es Volver a Vivir</p>
+          
                   <section class="features">
+                          @foreach($albumns as $album)
                     <article>
-                      <a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-                      <h3 class="major">Sed feugiat lorem</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+                      <a href="#" class="image"><img src="{{$album->imagen}}" alt="" /></a>
+                      <h3 class="major">{{$album->nombre}}</h3>
+                      <p>{{$album->descripcion}}</p>
                       <a href="#" class="special">Learn more</a>
                     </article>
-                    <article>
-                      <a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-                      <h3 class="major">Nisl placerat</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-                      <a href="#" class="special">Learn more</a>
-                    </article>
-                    <article>
-                      <a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-                      <h3 class="major">Ante fermentum</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-                      <a href="#" class="special">Learn more</a>
-                    </article>
-                    <article>
-                      <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-                      <h3 class="major">Fusce consequat</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-                      <a href="#" class="special">Learn more</a>
-                    </article>
+                     @endforeach
+
                   </section>
-                  <ul class="actions">
-                    <li><a href="#" class="button">Browse All</a></li>
-                  </ul>
+                 
+                  
                 </div>
               </section>
 
@@ -148,7 +147,7 @@
               </ul>
             </div>
           </section>
-<img src="thumbnails/71303a04b4aee95deebfd0d1b4aa1ec9.jpg">
+
       </div>
 
     <!-- Scripts -->
@@ -158,6 +157,11 @@
       <script src="assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
       <script src="assets/js/main.js"></script>
+      <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 
   </body>
 </html>

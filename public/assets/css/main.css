@@ -2656,7 +2656,7 @@
 
 		.features article {
 			padding: 1.75em 1.75em 0.1em 1.75em ;
-			background-color: #353849;
+			background-color: #eceff1;
 			border-radius: 5px;
 			margin: 1.5em 3em 1.5em 0;
 			width: calc(50% - 1.5em);
@@ -3270,7 +3270,7 @@
 	}
 
 	.wrapper {
-		background-color: #2e3141;
+		background-color: #607d8b;
 		margin: 6.5em 0;
 		position: relative;
 	}

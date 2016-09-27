@@ -68,6 +68,7 @@ $factory->define(App\Album::class, function (Faker\Generator $faker) {
     return [
 
         'nombre' => $faker->name,
+        'imagen' => $faker->imageUrl($width = 506, $height = 295),
         'descripcion' =>$faker->text($maxNbChars = 200),
        
     ];

@@ -10,14 +10,15 @@
     
      <!-- Normalize CSS -->
     
-   
+   <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/material-design-iconic-font.min.css') }}">
      <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
      <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}">
      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-     <link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
+   
      <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     
 </head>
@@ -177,7 +178,7 @@
     
   
     
-   <script src="{{ asset('js/dropzone.js') }}"></script>
+  
    <script src="{{ asset('js/inicio.js') }}"></script>
      <script src="{{ asset('js/main.js') }}"></script>
      <script src="{{ asset('js/materialize.min.js') }}"></script>
