@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Event;
+use App\Image;
 use Illuminate\Support\Facades\DB; 
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManagerStatic as Image2;
+
+use Carbon\Carbon;
+
 class Events extends Controller
 {
     /**
@@ -15,10 +19,16 @@ class Events extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
+     /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    } */
+
+public function __construct()
+    {
+     Carbon::setlocale('es');   
+    } 
+
     public function index()
     {
         //
@@ -58,8 +68,8 @@ class Events extends Controller
    $file =$request->file('image');
    $path = public_path().'/thumbnails/';
    //$image->save($path.$file->getClientOriginalName());
-   //$image = Image::make($file)->resize(240,200);
-    $image = Image::make($file);
+   $image = Image2::make($file)->resize(276,276);
+    //$image = Image::make($file);
    $image->save($path.'thumb_'.$file->getClientOriginalName());
    $event= new Event();
    $event->nombre = $request->nombre;
@@ -84,6 +94,15 @@ return redirect()->action('Events@index');
     public function show($id)
     {
         //
+     $evento = Event::find($id);
+     //dd($evento->category->name);
+
+
+     //$imagess =DB::table('images')->get(); 
+     $imagess = Image::orderBy('id')->where('evento_id',$id)->paginate(6);
+     //return view('admin.eventos.show')->with(['images' => $images,'evento'=>$evento]);
+        return view('galeria.show')->with(['evento' => $evento, 'imagess' => $imagess]);
+    
     }
 
     /**

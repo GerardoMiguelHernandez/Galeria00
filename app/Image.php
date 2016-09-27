@@ -20,7 +20,12 @@ public function user()
     }
       public function event()
     {
-        return $this->hasMany('App\Event');
+        return $this->hasMany('App\Event','id','evento_id');
+    }
+
+    public function album()
+    {
+        return $this->belongsTo('App\Album');
     }
 
 

@@ -7,6 +7,7 @@
 	
 	<link rel="stylesheet" href="{{ asset('css/materialize.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/dropzone.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 	<!--<link rel="stylesheet" href="{{ asset('css/form_usuario.css') }}">-->
 	<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
@@ -52,6 +53,9 @@
 	<script src="{{ asset('js/materialize.js') }}"></script>
 	<script src="{{ asset('js/inicio.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="{{ asset('js/plupload.full.min.js') }}"></script>
+	<script src="{{ asset('js/dropzone.js') }}"></script>
+	
 	<script src="{{ asset('js/sweetalert.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 	

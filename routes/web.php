@@ -10,21 +10,17 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-use Illuminate\Support\Facades\DB; 
+
 Route::get('/admin/home', function () {
     return view('admin1.partials.slider');
 });
 
+//Ruta para vista principal
+//Route::get('Bienvenido','WelcomeController@index');
 
-Route::get('/', function () {
+Route::get('Bienvenido','WelcomeController@index');
 
-	 
-	 $events =DB::table('events')->get();
-            return view('galeria.slider',compact('events',$events));
-});
-
-
-
+Route::get('take','WelcomeController@Hola');
 
 Route::get('admin/users/index','UsersController@index');
 
@@ -77,6 +73,11 @@ Route::resource('centros','Works_centers');
 Route::resource('eventos','Events');
 Route::resource('imagenes','ImagesController');
 Route::post('centros/store','Works_centers@store');
+Route::post('admin/eventos','Events@store');
+
+
+
+
 
 });
 

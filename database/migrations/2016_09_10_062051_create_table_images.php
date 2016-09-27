@@ -19,7 +19,6 @@ class CreateTableImages extends Migration
              $table->string('descripcion');
              $table->integer('usuario_id')->unsigned();
              $table->integer('evento_id')->unsigned();
-            
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('evento_id')->references('id')->on('events')->onDelete('cascade');
 

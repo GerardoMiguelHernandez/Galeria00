@@ -1,4 +1,4 @@
-@extends('admin1.template_admin')
+@extends('admin.template_admin')
 
 @section('title', 'Agregar Evento')
 
@@ -81,5 +81,5 @@
 		</div>
 	</div>
 	</div>
-</div>
+</div> 
 @endsection

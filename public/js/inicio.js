@@ -1,9 +1,7 @@
 $( document ).ready(function(){
 
+ $(".button-collapse").sideNav();
 
-$("drop").dropzone({ 
-  url: "/admin/imagenes"
-});
 
    $('.parallax').parallax();
   $('.materialboxed').materialbox();

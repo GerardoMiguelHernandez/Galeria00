@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Http\Controllers\Auth;
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -38,17 +40,20 @@ class ImagesController extends Controller
     public function create()
     {
         //r
+      
 
          //obtner datos de las categorias
          //$events=DB::table('events')->get();
          //$user = Auth::user()->name;
        // $users = User::orderBy('id', 'asc');
 
-         //$events= Event::orderBy('id','asc');
-        $events =DB::table('events')->get();
+         $events= Event::orderBy('id','asc');
+        //$events =DB::table('events')->get();
         //$users=DB::table('users')->get();
 
       return view('admin.imagenes.create')->with(['events' => $events]);
+   
+   //return view('admin.imagenes.create'); 
     }
 
     /**
@@ -58,21 +63,33 @@ class ImagesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         //
-       $file =$request->file('image');
-   $path = public_path().'/thumbnails/';
+
+/*
+   $file =$request->file('image');
+   $path = public_path().'/uploads/';
    //$image->save($path.$file->getClientOriginalName());
-   $image = Image1::make($file);
+  
+   $image = Image1::make($file)->resize(1234,800);
    $image->save($path.'thumb_'.$file->getClientOriginalName());
    $image= new Image();
    $image->image= $file->getClientOriginalName();
    $image->descripcion = $request->descripcion;
-   $image->usuario_id = $request->usuario_id;
+   $image->usuario_id = 10;
    $image->evento_id= $request->evento_id;
    $image->save();
-   return redirect()->action('ImagesController@index');
+   //return redirect()->action('ImagesController@index');
+
+*/
+   
+   
+
+   dd($request->all());
+
+
     }
+    
 
     /**
      * Display the specified resource.
