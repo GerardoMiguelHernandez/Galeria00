@@ -4,17 +4,18 @@
 
 @section('content')
     
-<br>
 
 <div class="slider">
     <ul class="slides">
+      @foreach($even as $ev)
       <li>
-        <img src="/img/1.jpg"> <!-- random image -->
+        <img src="{{$ev->imagen}}"> <!-- random image -->
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>{{$ev->nombre}}</h3>
+          <h5 class="light grey-text text-lighten-3">{{$ev->fecha}}</h5>
         </div>
       </li>
+@endforeach
       
     </ul>
   </div>

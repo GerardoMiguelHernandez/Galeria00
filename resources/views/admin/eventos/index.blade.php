@@ -13,7 +13,7 @@
 
   <div class="card small z-depth-5">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator responsive-img" src="/thumbnails/{{'thumb_'.$event->imagen}}">
+      <img class="activator responsive-img" src="{{$event->imagen}}">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{$event->nombre}}<i class="material-icons right">more_vert</i></span>

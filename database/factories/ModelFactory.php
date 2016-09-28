@@ -56,7 +56,7 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'lugar'=>$faker->address,
         'descripcion' =>$faker->text($maxNbChars = 200),
-        'imagen'=> $faker->imageUrl($width = 276, $height = 276),
+        'imagen'=> $faker->imageUrl($width = 506, $height = 295),
         'category_id' => factory(App\Category::class)->create()->id,
         'centro_id' => factory(App\Work_center::class)->create()->id,
     ];
@@ -80,7 +80,7 @@ $factory->define(App\Image::class, function (Faker\Generator $faker) {
 
     return [
    
-        'image' => $faker->imageUrl($width = 506, $height = 295),
+        'image' => $faker->imageUrl($width = 3840, $height = 2169),
         'descripcion' =>$faker->text($maxNbChars = 200),
        'usuario_id' => factory(App\User::class)->create()->id,
         'evento_id' => factory(App\Event::class)->create()->id,

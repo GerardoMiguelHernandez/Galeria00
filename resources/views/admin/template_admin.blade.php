@@ -47,6 +47,7 @@
 		@yield('content')
      
 </main>
+@include('admin.partials.floating_button')
 <footer>
 	@include('admin.partials.footer')
     </footer>
