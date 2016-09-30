@@ -68,7 +68,7 @@ $factory->define(App\Album::class, function (Faker\Generator $faker) {
     return [
 
         'nombre' => $faker->name,
-        'imagen' => $faker->imageUrl($width = 506, $height = 295),
+        'imagen' => $faker->imageUrl($width = 400, $height = 295),
         'descripcion' =>$faker->text($maxNbChars = 200),
        
     ];
@@ -80,7 +80,7 @@ $factory->define(App\Image::class, function (Faker\Generator $faker) {
 
     return [
    
-        'image' => $faker->imageUrl($width = 3840, $height = 2169),
+        'image' => $faker->imageUrl($width = 800, $height = 356),
         'descripcion' =>$faker->text($maxNbChars = 200),
        'usuario_id' => factory(App\User::class)->create()->id,
         'evento_id' => factory(App\Event::class)->create()->id,
