@@ -61,7 +61,13 @@
         <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h5 class="light grey-text text-lighten-3">
+
+
+
+
+{{$collection->random()
+          }}</h5>
         </div>
       </li>
     </ul>
@@ -146,13 +152,15 @@
 
   <div class="card medium z-depth-5">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator responsive-img" src="{{$event->imagen}}">
+      <a class="waves-effect waves-light modal-trigger" href="#modal1"><img class="responsive-img" width="650" src="{{$event->imagen}}"></a>
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">{{$event->nombre}}<i class="material-icons right">more_vert</i></span>
       <p>
       <a href="{{route('admin.eventos.destroy',$event->id)}}">Eliminar</a>
       <a href="{{route('eventos.edit',$event->id)}}">Editar</a>
+      
+
       </p>
     </div>
     <div class="card-reveal">
@@ -179,6 +187,17 @@
       </p>
     </div>
   </div></div>
+
+
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>{{$event->nombre}}</h4>
+      <img class="materialboxed" width="650" src="{{$event->imagen}}">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
           @endforeach
          </div>
          </div>
@@ -192,30 +211,7 @@
 </div>
 
 
-
-  <div class="row">
-    <div class="col s12 m9 l10">
-      <div id="introduction" class="section scrollspy">
-        <p>Content </p>
-      </div>
-
-      <div id="structure" class="section scrollspy">
-        <p>Content </p>
-      </div>
-
-      <div id="initialization" class="section scrollspy">
-        <p>Content </p>
-      </div>
-    </div>
-    <div class="col hide-on-small-only m3 l2">
-      <ul class="section table-of-contents">
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#structure">Structure</a></li>
-        <li><a href="#initialization">Intialization</a></li>
-      </ul>
-    </div>
-  </div>
-        
+  
 
 
 

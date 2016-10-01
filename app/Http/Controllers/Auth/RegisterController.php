@@ -7,13 +7,6 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-
-use Illuminate\Http\Request;
-use App\Http\Requests;
-
-
-
-
 class RegisterController extends Controller
 {
     /*
@@ -34,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -56,10 +49,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'lastname' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'tipo' => 'required|max:255',
         ]);
     }
 
@@ -76,26 +67,5 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-    }
-
-
-    public function get_register(){
-
-        return view('auth.register');
-    }
-
-    public function store(Request $request){
-
-        $user =new User($request->all());
-        $user->password = bcrypt($request->password);
-        $user->save();
-
-        return redirect()->action('UsersController@index');
-
-
-    }
-    public function index(){
-
-        dd('llego correctamente');
     }
 }

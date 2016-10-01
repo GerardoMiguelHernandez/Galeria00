@@ -32,7 +32,12 @@ $count_centros =Work_center::all()->count();
 	$events =Event::search($request->nombre)->orderBy('fecha','DES')->paginate(6);
 $even = Event::orderBy('fecha','DES')->skip(1)->take(5)->get();
 
- return view('admin.partials.slider')->with(['imagenes' => $imagenes, 'count_imagenes' => $count_imagenes, 'count_albums' => $count_albums, 'events' => $events,'count' => $count,'count_centros'=>$count_centros,'count_users'=>$count_users,'even' => $even,'albumns'=>$albumns]); 
+
+
+$collection = collect([1, 2, 3, 4, 5]);
+
+$collection->random();
+ return view('admin.partials.slider')->with(['imagenes' => $imagenes, 'count_imagenes' => $count_imagenes, 'count_albums' => $count_albums, 'events' => $events,'count' => $count,'count_centros'=>$count_centros,'count_users'=>$count_users,'even' => $even,'albumns'=>$albumns,'collection'=>$collection]); 
 
 }
 public function Hola(){

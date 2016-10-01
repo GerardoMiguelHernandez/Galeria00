@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/post_register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -23,23 +23,6 @@
                                 @endif
                             </div>
                         </div>
-
-
- <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="lastname" class="col-md-4 control-label">Last Name</label>
-
-                            <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
-
-                                @if ($errors->has('lastname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                      
-
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
@@ -80,25 +63,6 @@
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
-
-                         <div class="form-group{{ $errors->has('tipo') ? ' has-error' : '' }}">
-                            <label for="tipo" class="col-md-4 control-label">Nivel</label>
->
-                            <div class="col-md-6">
-                                
-
-                                <div class="input-field col s12">
-    <select id="tipo" class="form-control" name="tipo" required>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="Administrador">Administrador</option>
-      <option value="Normal">Normal</option>
-      
-    </select>
-  </div>
-
-                                
                             </div>
                         </div>
 

@@ -12,13 +12,13 @@
 */
 
 Route::get('/admin/home', function () {
-    return view('admin1.partials.slider');
+    return view('admin1.template_admin');
 });
 
 //Ruta para vista principal
 //Route::get('Bienvenido','WelcomeController@index');
 
-Route::get('Bienvenido','WelcomeController@index');
+Route::get('/','WelcomeController@index');
 
 Route::get('take','WelcomeController@Hola');
 
@@ -28,11 +28,16 @@ Route::group(['prefix' => 'admin'],function(){
 Route::post('categoria/store','CategoryController@store');
 Route::get('categoria/create','CategoryController@create');
 Route::get('categoria/index','CategoryController@index');
-Route::post('logout','Auth\LoginController@log0ut');
+
+
+
+
+ Route::post('/logout','Auth\LoginController@logOut');
+ /*
 Route::get('login','Auth\LoginController@get_login');
 Route::post('login','Auth\LoginController@autenticate');
 Route::get('register','Auth\RegisterController@get_register');
-Route::post('post_register','Auth\RegisterController@store');
+Route::post('post_register','Auth\RegisterController@store'); */
 
 Route::get('categoria/{id}/destroy',[
 	'uses' => 'CategoryController@destroy',
@@ -85,6 +90,18 @@ Route::post('admin/eventos','Events@store');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
